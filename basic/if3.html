@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //사용자에게 국어,영어,수학 점수를 입력받아 평균을 구한뒤
+      //a,b,c,d,e 등급 출력하기
+      let num1 = Number(prompt("국어점수"));
+      let num2 = Number(prompt("영어점수"));
+      let num3 = Number(prompt("수학점수"));
+      let result = (num1 + num2 + num3) / 3;
+      document.write("당신의 점수의 평균은 " + result + "점입니다.");
+
+      if (result > 90) {
+        document.write("당신의 등급은 A등급입니다");
+      } else if (result > 80) {
+        document.write("당신의 등급은 B등급입니다");
+      } else if (result > 70) {
+        document.write("당신의 등급은 C등급입니다");
+      } else if (result > 60) {
+        document.write("당신의 등급은 D등급입니다");
+      } else {
+        document.write("당신의 등급은 E등급입니다");
+      }
+    </script>
+  </body>
+</html>

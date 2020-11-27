@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num1 = Number(prompt("국어점수"));
+      let num2 = Number(prompt("영어점수"));
+      let num3 = Number(prompt("수학점수"));
+      let result = (num1 + num2 + num3) / 3;
+      document.write("당신의 점수의 평균은 " + result + "점입니다.");
+
+      switch (
+        parseInt(result / 10) //parseInt 강제적으로 정수형태로바꿔줌(소수점자리를 없애줌)
+      ) {
+        case 9:
+          document.write("당신의 등급은 A등급입니다");
+          break;
+        case 8:
+          document.write("당신의 등급은 B등급입니다");
+          break;
+        case 7:
+          document.write("당신의 등급은 C등급입니다");
+          break;
+        case 6:
+          document.write("당신의 등급은 D등급입니다");
+          break;
+        default:
+          document.write("당신의 등급은 F등급입니다");
+          break;
+      }
+    </script>
+  </body>
+</html>
