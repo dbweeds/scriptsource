@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #result {
+        color: red;
+        margin-top: 0;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="tel" />
+    <input type="button" value="보내기" />
+    <p id="result"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        let result = $("#result");
+        let tel = $("[name = 'tel']");
+        $(tel).focus(function () {
+          tel.select();
+          result.css("display", "none");
+        });
+        $(":button").click(function () {
+          let reg = /\d{2,3}-\d{3,4}-\d{4}$/;
+
+          if (!reg.test(tel.val())) {
+            result.css("display", "block");
+            result.html("전화번호를 확인해 주세요.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

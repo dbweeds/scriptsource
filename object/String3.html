@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //이메일을 입력받아서 중간에 @ 들어있는지 확인하기
+      //들어있지않다면 alert(이메일 다시 입력)다시 이메일 입력받기=>function
+      let email = function f() {
+        var email1 = prompt("이메일을 입력하세요.");
+        if (email1.match("@") == null) {
+          alert("이메일 다시입력");
+          f();
+        } else {
+          document.write(email1);
+        }
+      };
+      email();
+      document.write(email.email1);
+      //   function emailCheck() {
+      //     var email = prompt("이메일을 입력하세요");
+      //     if (email.indexOf("@") == -1) {
+      //       alert("이메일 다시입력");
+      //       emailCheck();
+      //     } else {
+      //       document.write(email);
+      //     }
+      //   }
+      //   emailCheck();
+    </script>
+  </body>
+</html>

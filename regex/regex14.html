@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div>
+        <label for="age">나이</label>
+        <input type="text" name="age" id="age" />
+      </div>
+
+      <div>
+        <input type="submit" value="전송" onclick="regex()" />
+      </div>
+    </form>
+    <script>
+      //버튼을 누르면 폼의 내용을 가져와서 확인하기
+      function regex() {
+        event.preventDefault();
+        let name = document.getElementById("name");
+        let age = document.getElementById("age");
+        let regName = /[가-힣]{2,4}$/;
+
+        if (!regName.test(name.value)) {
+          alert("이름을 확인해주세요");
+          name.focus();
+          name.select();
+          return false;
+        } else if (
+          isNaN(parseInt(age.value)) ||
+          parseInt(age.value) < 0 ||
+          parseInt(age.value) > 120
+        ) {
+          alert("나이를 확인해주세요");
+          age.focus();
+          return false;
+        } else {
+          document.querySelector("form").submit();
+        }
+      }
+      //사용자의 이름이 비어있지 않고 2~4자리로 입력되었는지 확인하기
+      //나이가 입력되어 있고, 0~120까지의 숫자가 입력되었는지 확인하기
+    </script>
+  </body>
+</html>

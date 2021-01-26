@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #result {
+        color: red;
+        margin-top: 0;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="email" name="email" onfocus="inputClear()" />
+    <input type="button" value="보내기" onclick="emailCheck()" />
+    <p id="result"></p>
+    <script>
+      let result = document.getElementById("result");
+      let email = document.querySelector("[name='email']");
+      function inputClear() {
+        //포커스를 주면 하단에 나왔단 검증 메세지 없애기
+        result.innerHTML = "";
+        // result.style.display="none";
+        email.select();
+      }
+
+      function emailCheck() {
+        //정규식 패턴 생성
+        let reg = /\w+@[a-zA-Z]+\.(com|dog|edu|ent)$/;
+        //사용자가 입력한 값 가져오기
+
+        if (!reg.test(email.value)) {
+          // result.style.display="block";
+          result.innerHTML = "이메일을 확인해 주세요.";
+        }
+      }
+    </script>
+  </body>
+</html>

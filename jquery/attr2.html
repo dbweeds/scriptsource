@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="left-arrow.png" alt="" />
+    <button type="button" id="change">변경</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      //처음에는 왼쪽 화살표 보여주기
+      //변경버튼 누르면 반대쪽 화살표 보여주기
+      var img = $("img");
+      let i = true;
+      $("#change").click(function () {
+        if (i) {
+          img.attr("src", "right-arrow.png");
+          i = false;
+        } else {
+          img.attr("src", "left-arrow.png");
+          i = true;
+        }
+      });
+    </script>
+  </body>
+</html>

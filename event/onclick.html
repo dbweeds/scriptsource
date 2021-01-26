@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="target">
+    <form action="">
+      <input
+        type="radio"
+        name=""
+        id=""
+        onclick="changeColor('lightblue')"
+      />라이트블루
+      <input type="radio" name="" id="" onclick="changeColor('green')" />그린
+    </form>
+    <script>
+      function changeColor(color) {
+        //body 백그라운드 변경
+        document.getElementById("target").style.backgroundColor = color;
+      }
+    </script>
+  </body>
+</html>

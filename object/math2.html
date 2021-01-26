@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //while문과 Mate.random()을이용해 두개의 주사위를 던진다고 할때
+      //(첫번째 주사위값,두번째 주사위값) == 5 이렇다면 주사위 실행 멈추기
+      do {
+        var random1 = Math.floor(Math.random() * 6) + 1;
+        var random2 = Math.floor(Math.random() * 6) + 1;
+        // var result = random1 + random2;
+        document.write("(", random1, ",", random2, ")<br>");
+      } while (random1 + random2 != 5);
+
+      //출력 결과(1,3),(2,2),(4,1)
+    </script>
+  </body>
+</html>

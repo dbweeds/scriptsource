@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="p1">This is a paragraph</p>
+    <input type="button" value="눌러보세요" onclick="chageStyle()" />
+    <script>
+      function chageStyle() {
+        // let p1 = document.getElementById("p1");
+        let p1 = document.querySelector("#p1");
+        p1.style.fontFamily = "Century Schoolbook";
+        p1.style.color = "red";
+        p1.style.fontStyle = "italic";
+      }
+      let p2 = document.querySelector("#p1");
+      console.log(p2);
+    </script>
+  </body>
+</html>

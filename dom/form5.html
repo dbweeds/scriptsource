@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>숫자 맞추기 게임</h3>
+    <p>
+      이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다. 숫자는1~100 사이에
+      있습니다.
+    </p>
+    <div>
+      <label for="">숫자</label>
+      <input type="text" name="num1" size="5" />
+      <input type="button" value="확인" id="button" onclick="result()" />
+    </div>
+    <div>
+      <label for="">추측횟수</label>
+      <input type="text" name="count" value="0" readonly />
+    </div>
+    <div>
+      <label for="">힌트</label>
+      <input type="text" name="hint" value="" readonly />
+    </div>
+    <script>
+      // let random = parseInt(Math.random() * 100 + 1);
+      // let count = document.querySelector("[name = 'count']");
+      // let hint = document.querySelector("[name = 'hint']");
+      // let i = 1;
+      // console.log(random);
+
+      // function result() {
+      //   var num1 = Number(document.querySelector("[name='num1']").value);
+      //   if (num1 == random) {
+      //     count.value = i++;
+      //     hint.value = "정답입니다";
+      //     document.getElementById("button").disabled = "true";
+      //     return false;
+      //   } else if (num1 > random) {
+      //     count.value = i++;
+      //     hint.value = num1 + "값보다 작습니다.";
+      //     return false;
+      //   } else if (num1 < random) {
+      //     count.value = i++;
+      //     hint.value = num1 + "값보다 큽니다.";
+      //     return false;
+      //   }
+      // }
+      let random = parseInt(Math.random() * 100 + 1);
+      let i = 0;
+      console.log(random);
+
+      function result() {
+        var num1 = Number(document.querySelector("[name='num1']").value);
+        i++;
+        let result1 = "";
+        if (random == num1) {
+          result1 = "정답입니다";
+          document.getElementById("button").disabled = "true";
+        } else if (random > num1) {
+          result1 = "추측값이 작습니다";
+        } else {
+          result1 = "추측값이 큽니다";
+        }
+        document.querySelector("[name = 'count']").value = i;
+        document.querySelector("[name = 'hint']").value = result1;
+      }
+    </script>
+  </body>
+</html>

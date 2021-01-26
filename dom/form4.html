@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="get">
+      <div>
+        <label for="username">이름 : </label>
+        <input type="text" name="username" id="username" />
+      </div>
+      <div>
+        <label for="passward">비밀번호 : </label>
+        <input type="text" name="passward" id="passward" />
+      </div>
+      <div>
+        <label for="age">나이 : </label>
+        <input type="text" name="age" id="age" />
+      </div>
+      <div>
+        <input type="submit" value="전송" onclick="checkForm()" />
+      </div>
+    </form>
+    <script>
+      function checkForm() {
+        //event(submit,a)막는 코드
+        event.preventDefault();
+        //이름, 비밀번호, 나이를 가져온 후 내용이 없는 경우 해당요소에
+        //값을 입력할 수 있도록 포커스 지정
+        var username = document.getElementById("username");
+        var passward = document.getElementById("passward");
+        var age = document.getElementById("age");
+        if (!username.value) {
+          alert("이름을 입력하세요.");
+          username.focus();
+          return false;
+        } else if (!passward.value) {
+          alert("비밀번호을 입력하세요.");
+          passward.focus();
+          return false;
+        } else if (!age.value) {
+          alert("나이을 입력하세요.");
+          age.focus();
+          return false;
+        }
+        //폼 전송 => submit()
+        document.querySelector("form").submit();
+      }
+    </script>
+  </body>
+</html>
